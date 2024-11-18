@@ -34,6 +34,60 @@
         margin-left: 50px;
     }
 
+    .middle_img {
+        width: 380px;
+        height: 180px;
+        margin-left: 5px;
+    }
+
+    .order_menu {
+        color: red;
+        font-size: large;
+        padding-right: 300px;
+        margin-bottom: 25px;
+    }
+
+    .receive {
+        color: red;
+        font-size: large;
+        padding-right: 265px;
+        margin-bottom: 25px;
+    }
+
+    .sample1 {
+        display: flex;
+        font-size: large;
+        padding-right: 320px;
+        margin-bottom: 25px;
+    }
+
+    .sample_button {
+        /* width: 200px; */
+        height: 40px;
+        margin-left: 250px;
+    }
+
+    .support_div {
+        display: flex;
+    }
+
+    .support {
+        font-size: large;
+        padding-right: 0px;
+    }
+
+    .support_number {
+        margin-top: 13px;
+        margin-left: 10px;
+    }
+
+    .receive_button {
+        width: 350px;
+        height: 60px;
+        margin-top: 50px;
+        margin-left: 13px;
+    }
+
 }
 
 /* seシリーズ */

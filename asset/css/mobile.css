@@ -43,8 +43,16 @@
     .order_menu {
         color: red;
         font-size: large;
-        padding-right: 300px;
+        /* padding-right: 280px; */
         margin-bottom: 25px;
+    }
+
+    .menu {
+        margin-left: 280px;
+    }
+
+    .menu_inside {
+        display: flex;
     }
 
     .receive {

@@ -2,6 +2,7 @@
 @media(max-width: 430px) {
     body {
         background-color: #404040;
+        font-family: "Helvetica", "Arial", "游ゴシック", "Yu Gothic", "メイリオ", "Meiryo", sans-serif;
     }
 
     .top_logo {

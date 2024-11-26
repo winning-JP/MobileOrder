@@ -13,42 +13,73 @@
         <div class="header">
             <img src="asset/img/logo-yoko_touka.png" alt="">
             <h1>交付のご案内</h1>
+            <button id="addButton">番号を追加</button>
+            <button id="removeButton">番号を削除</button>
         </div>
         <br>
     </header>
 
     <div class="display">
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
+        <!-- 追加された番号がここに入る -->
     </div>
 
-    <div class="display">
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-    </div>
 
-    <div class="display">
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-    </div>
+    <script>
+        // ボタンの取得
+        const addButton = document.getElementById("addButton");
+        const removeButton = document.getElementById("removeButton");
 
-    <div class="display">
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-        <div class="number">1</div>
-    </div>
+        let currentRow = document.querySelector(".display"); // 初期の行を選択
+        let rowCount = 1; // 行数を管理
 
+        // 追加ボタンが押された時の処理
+        addButton.addEventListener("click", function () {
+            // 新しいdivを作成
+            const newNumber = document.createElement("div");
+            newNumber.classList.add("number");
+            newNumber.textContent = "number";
+
+            // 6個ごとに新しい行を作成
+            if (currentRow.children.length === 6) {
+                // 行数が4未満なら、新しい行を追加
+                if (rowCount < 4) {
+                    const newRow = document.createElement("div");
+                    newRow.classList.add("display");
+                    document.body.appendChild(newRow);
+                    currentRow = newRow; // 新しい行に切り替え
+                    rowCount++;
+                } else {
+                    return; // 最大行数を超えたら追加しない
+                }
+            }
+
+            // 現在の行に番号を追加
+            currentRow.appendChild(newNumber);
+        });
+
+        // 削除ボタンが押された時の処理
+        removeButton.addEventListener("click", function () {
+            const allRows = document.querySelectorAll(".display");
+
+            // すべての行を順にチェック
+            for (let row of allRows) {
+                if (row.children.length > 0) {
+                    // 最初の箱を削除
+                    row.removeChild(row.firstChild);
+                    return; // 1つ削除したら処理を終了
+                }
+            }
+
+            // 行に番号が残っていない場合、その行を削除
+            const firstRow = allRows[0];
+            if (firstRow && firstRow.children.length === 0 && rowCount > 1) {
+                document.body.removeChild(firstRow);
+                currentRow = document.querySelector(".display"); // 最初の行に戻す
+                rowCount--;
+            }
+        });
+
+    </script>
 </body>
 
 </html>
